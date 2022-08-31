@@ -125,8 +125,6 @@ echo "</br>";
  function addNumber1(float $a,float $b,float $c):int{
      return (int)($a + $b + $c);
  }
- echo addNumber1(1.2,1.5,2.5);
-echo "</br>";
 
 ?>
 
