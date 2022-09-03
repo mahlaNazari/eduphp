@@ -124,7 +124,84 @@ echo "</br>";
 
  function addNumber1(float $a,float $b,float $c):int{
      return (int)($a + $b + $c);
- }
+     }
 
+     function addFive(&$number){
+        $number+=5;
+     }
+     $val=8;
+     addFive($val);
+     echo $val;
+
+echo "</br>";
+     $colors=array("red","blue","yellow","brown");
+     $lenght=count($colors);
+
+     for($x=0;$x<=$lenght;$x++){
+        echo $colors[$x];
+        echo "<br>";
+     }
+
+     $age=array("p"=>"1","b"=>"2","c"=>"3");
+     foreach($age as $x=>$x_val){
+        echo "key is :". $x ." and value is :". $x_val ;
+echo "<br>";
+     };
+
+     $cars=array(
+        array("pride",10,20),
+        array("mazda",15,30),
+        array("bmw",30,40)
+     );
+
+//      for($num=0;$num<4;$num++){
+// echo "<h>row is : $num</h>";
+// echo "<ul>";
+// for($x=0;$x<=3;$x++){
+// echo "<li>". $car[$num][$x] ."</li>";
+// }
+// echo "</ul>";
+//      }
+
+for ($row = 0; $row < 4; $row++) {
+    echo "<p><b>Row number $row</b></p>";
+    echo "<ul>";
+    for ($col = 0; $col < 3;$col++) {
+        echo "<li>" . $cars[$row][$col] . "</li>";
+    }
+    echo "</ul>";
+}
+
+$names=array("ali"=>22,"mohammad"=>30,"reza"=>15);
+ksort($names);
+foreach($names as $x=>$x_val){
+    echo "name is: ".$x. " and age is : ".$x_val;
+    echo "<br>";
+}
+
+$x=70;
+$y=20;
+function addNumber(){
+    $GLOBALS['z']=$GLOBALS['x']+$GLOBALS['y'];
+}
+addNumber();
+echo $z;
+
+echo"<br>";
+echo $_SERVER['PHP_SELF'];
+
+echo "<br>";
+$str="the Rain is fall in spain";
+$pattern='/ain/i';
+echo preg_match($pattern,$str);
+
+echo "<br>";
+//$ptr="/Rain/i";
+echo preg_replace("/Rain/i",'snow',$str);
+
+echo "<br>";
+$str1="Apples and banana banana banana";
+$patt='/ba(na){2}/i';
+echo preg_match_all($patt,$str1);
 ?>
 
