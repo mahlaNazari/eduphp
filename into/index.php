@@ -203,5 +203,34 @@ echo "<br>";
 $str1="Apples and banana banana banana";
 $patt='/ba(na){2}/i';
 echo preg_match_all($patt,$str1);
+echo "<br>";
+$int=10;
+$min=1;
+$max=100;
+
+// if(filter_var($int,FILTER_VALIDATE_INT)===0||!filter_var($int,FILTER_VALIDATE_INT)===false){
+//     echo "int is valid";    
+// } else {
+//     echo "int is not valid";
+// }
+if(filter_var($int,FILTER_VALIDATE_INT,array("options"=>array("min_range"=>$min,"max_range"=>$max))) === false){
+    echo "variable is not valid";
+}
+else{
+    echo "variable is valid";
+}
+
+echo "<br>";
+
+$cars = array("Volvo"=>1, "BMW"=>2, "Toyota"=>3);
+$car_en=json_encode($cars);
+echo $car_en;
+echo "<br>";
+$car_dec=json_decode($car_en);
+foreach($car_dec as $key=>$val){
+    echo "key is : ".$key." and value is : ".$val;
+    echo "<br>";
+}
 ?>
+
 
