@@ -22,7 +22,6 @@ class employeModel extends userModel{
     }
     public function relationship($status):string
     {
-
         if($status!=="oky")
          return $this->name . ' ghahre ba ' . $this->partnear . " relationship  " . $status;
 
